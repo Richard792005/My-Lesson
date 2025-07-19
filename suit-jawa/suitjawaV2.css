@@ -1,0 +1,194 @@
+*,
+body,
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        'header header header'
+        'contents contents contents'
+        'footer footer footer'
+
+    ;
+    justify-items: center;
+    align-items: center;
+    background: url(img/bg.png);
+    padding-top: 20px;
+}
+
+
+header {
+    /* background-color: red; */
+    grid-area: header;
+}
+
+
+.container {
+    display: grid;
+    grid-area: contents;
+    grid-template-columns: 60fr 1fr 1fr;
+    grid-template-areas:
+        'areaKomputer areaKomputer areaKomputer'
+        'hasil hasil hasil'
+        'areaUser areaUser areaUser'
+    ;
+
+    position: relative;
+    padding-top: 20px;
+}
+
+footer {
+    grid-area: footer;
+
+}
+
+/* sekarang seleksi area komputer */
+.area-komputer {
+    background: linear-gradient(to bottom, rgba(207, 196, 121, 0.8) 0%, #F3C623 100%);
+    grid-area: 'areaKomputer';
+
+    /* border  */
+    border-radius: 40px 40px 0 0;
+    border: 2px solid;
+
+    height: 20rem;
+    width: 50rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'komputer komputer';
+    justify-items: center;
+    justify-items: center;
+    position: relative;
+    top: 9%;
+    box-shadow: 12px -5px 7px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* sekarang seleksi hasil element */
+
+
+/* buat class saat salah red */
+.red {
+    color: #e10943;
+}
+
+/* buat class saat benar green */
+
+.green {
+    color: green;
+}
+
+.hasil {
+    /* background-color: red; */
+    font-size: 21px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    color: #e0174d;
+    grid-area: hasil;
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
+    height: 90px;
+
+    background-color: whitesmoke;
+
+    border: solid salmon 5px;
+    border-radius: 30px;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 37%;
+
+    position: inherit;
+    top: ;
+}
+
+/* sekarang  seleki li  */
+
+img {
+    height: 130px;
+    width: 130px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+.gajah,
+.semut,
+.orang,
+.image-komputer {
+    transition: .3s;
+}
+
+.gajah:hover,
+.semut:hover,
+.orang:hover,
+.image-komputer:hover,
+.active {
+    border-radius: 90px;
+    box-shadow: 0px 0px 20px 5px limegreen;
+}
+
+
+
+.area-user {
+    grid-area: areaUser;
+    position: relative;
+    bottom: 10%;
+}
+
+.area-user ul {
+    background: linear-gradient(to bottom, rgba(30, 157, 206, 0.92)0%, rgba(30, 47, 206, 0.92) 100%);
+    display: grid;
+    grid-template-areas:
+        'orang semut gajah'
+
+    ;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.1rem;
+
+    width: 50rem;
+    height: 20rem;
+    border: 2px solid;
+    border-radius: 0 0 40px 40px;
+    align-items: center;
+
+    box-shadow: -12px 5px 7px 2px rgba(0, 0, 0, 0.8);
+}
+
+.area-komputer .image-komputer {
+    grid-area: komputer;
+   
+    margin: auto 90px;
+
+}
+
+ul li:nth-child(1) {
+    /* background-color: red; */
+    grid-area: orang;
+    margin: auto 90px;
+}
+
+ul li:nth-child(2) {
+    /* background-color: red; */
+    grid-area: semut;
+}
+
+ul li:nth-child(3) {
+    /* background-color: red; */
+    grid-area: gajah;
+}
